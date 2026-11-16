@@ -90,3 +90,14 @@ Scrape interval: 15 seconds.
 ## Author
 
 Cloud Infrastructure Monitoring System — DevOps and Cloud Monitoring Portfolio Project.
+
+## Project Screenshots
+
+### Grafana Monitoring Dashboard
+![Grafana Dashboard](screenshots/dashboard.png)
+
+### High CPU Usage Alert
+![CPU Alert](screenshots/high-cpu-alert.png)
+
+### High Memory Usage Alert
+![Memory Alert](screenshots/high-memory-alert.png)
