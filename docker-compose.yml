@@ -6,6 +6,7 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
     restart: unless-stopped
@@ -21,10 +22,17 @@ services:
       - "--path.rootfs=/host"
     restart: unless-stopped
 
-
   grafana:
     image: grafana/grafana:latest
     container_name: monitoring-grafana
     ports:
       - "3001:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
     restart: unless-stopped
+
+volumes:
+  grafana_data:
+    name: cloud-monitoring-grafana-data
+  prometheus_data:
+    name: cloud-monitoring-prometheus-data
